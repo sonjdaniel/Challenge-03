@@ -23,14 +23,14 @@ var spec = ["!","@","#","$","%","^","&","*","(",")","_","+","~","/","?","`","-",
 //  prompt user for the length and echo back
 var length = prompt("How long do you want your password to be? pick between 8-128");
 console.log(length);
-
-
-
-// prompt user to enter information
-var char = confirm("Do you want special character? Press Ok for Yes or Cancel for No")
-var num = confirm("Do you want to include numbers? Press Ok for Yes or Cancel for No ")
-var upper = confirm("Do you want upper case?  Press Ok for Yes or Cancel for No " )
-var lower = confirm("Do you want lower case? Press Ok for Yes or Cancel for No ")
+var char = confirm("Do you want special character? Press Ok for Yes or Cancel for No");
+console.log(char);
+var num = confirm("Do you want to include numbers? Press Ok for Yes or Cancel for No ");
+console.log(num);
+var upper = confirm("Do you want upper case?  Press Ok for Yes or Cancel for No " );
+console.log(upper);
+var lower = confirm("Do you want lower case? Press Ok for Yes or Cancel for No ");
+console.log(lower);
 
 
 
