@@ -32,11 +32,24 @@ console.log(upper);
 var lower = confirm("Do you want lower case? Press Ok for Yes or Cancel for No ");
 console.log(lower);
 
-// if else statement
-
+// if statement for the length and need to include one character type
 if (length < 8 || length > 128 ) {
+  alert("Choose a length of at least 8 characters and no more than 128 characters");
   return;
 }
+if (!lower && !upper && !num && !char) {
+  alert("You must select at least one character type to include in the password!");
+  return;
+}
+
+// Generate password 
+var gpassword = generatePassword(length, lower, num, upper, char);
+
+
+
+
+
+
 
 }
 
