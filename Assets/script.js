@@ -32,8 +32,11 @@ console.log(upper);
 var lower = confirm("Do you want lower case? Press Ok for Yes or Cancel for No ");
 console.log(lower);
 
+// if else statement
 
-
+if (length < 8 || length > 128 ) {
+  return;
+}
 
 }
 
