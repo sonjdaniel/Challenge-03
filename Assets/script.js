@@ -18,7 +18,7 @@ var upper = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q"
 var lower = ["a","b","c","d","e","f","g", "h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 var num = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var char = ["!","@","#","$","%","^","&","*","(",")","_","+","~","/","?","`","-",":",";","<",">"];
-
+var password= [""]
 
 
 //  prompt user for the length and echo back
@@ -34,25 +34,25 @@ if (length < 8 || length > 128 ) {
   var specchar = confirm("Do you want special character? Press Ok for Yes or Cancel for No");
   console.log(specchar);
 
-  if (specchar === true) {
+  if (specchar) {
     password += char.join("");
   }
   var numchar = confirm("Do you want to include numbers? Press Ok for Yes or Cancel for No ");
   console.log(numchar);
 
-  if (numchar === true) {
+  if (numchar) {
     password += num.join("");
   }
   var lowercase = confirm("Do you want lower case? Press Ok for Yes or Cancel for No ");
   console.log(lowercase);
 
-  if (lowercase === true) {
+  if (lowercase) {
     password += lower.join("");
   }
   var uppercase = confirm("Do you want upper case?  Press Ok for Yes or Cancel for No " );
   console.log(uppercase);
 
-  if (uppercase === true) {
+  if (uppercase) {
     password += upper.join("");
   }
 
@@ -63,18 +63,23 @@ if (length < 8 || length > 128 ) {
 
   }
 
-
-  var password = "";
-  console.log(pasword)
-
+// reamped the return password to show the final input. 
+var createResult = function() {
+  var genpassword = [""];
+  for (var i = 0; i < length; i++) {
+    genpassword += password [Math.floor(Math.random() * password.length)];
+  }
+  return genpassword;
 }
 
+//final input
+if (confirm ("Selected Password Criteria:\n" + "Password Length:   " + length + "\n" + "Lower Case?:   " + lowercase + "\n" + "Upper Case?:   " + uppercase + "\n" + "Numeric values?:   " + numchar + "\n" + "Special characters?:   " + specchar) == true) {
+  return createResult() ;
+} else {
+  return;
+}   
 
-// Generate password 
-var gpassword = generatePassword(length, lower, num, upper, char);
-console.log (gpassword)
-
-
+}
 
 
 
