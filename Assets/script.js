@@ -20,38 +20,62 @@ var num = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var char = ["!","@","#","$","%","^","&","*","(",")","_","+","~","/","?","`","-",":",";","<",">"];
 
 
+
 //  prompt user for the length and echo back
 var length = prompt("How long do you want your password to be? pick between 8-128");
 console.log(length);
-var char = confirm("Do you want special character? Press Ok for Yes or Cancel for No");
-console.log(char);
-var num = confirm("Do you want to include numbers? Press Ok for Yes or Cancel for No ");
-console.log(num);
-var upper = confirm("Do you want upper case?  Press Ok for Yes or Cancel for No " );
-console.log(upper);
-var lower = confirm("Do you want lower case? Press Ok for Yes or Cancel for No ");
-console.log(lower);
 
 // if statement for the length and need to include one character type
 if (length < 8 || length > 128 ) {
   alert("Choose a length of at least 8 characters and no more than 128 characters");
   return;
+  } else {
+
+  var specchar = confirm("Do you want special character? Press Ok for Yes or Cancel for No");
+  console.log(specchar);
+
+  if (specchar === true) {
+    password += char.join("");
+  }
+  var numchar = confirm("Do you want to include numbers? Press Ok for Yes or Cancel for No ");
+  console.log(numchar);
+
+  if (numchar === true) {
+    password += num.join("");
+  }
+  var lowercase = confirm("Do you want lower case? Press Ok for Yes or Cancel for No ");
+  console.log(lowercase);
+
+  if (lowercase === true) {
+    password += lower.join("");
+  }
+  var uppercase = confirm("Do you want upper case?  Press Ok for Yes or Cancel for No " );
+  console.log(uppercase);
+
+  if (uppercase === true) {
+    password += upper.join("");
+  }
+
+  if (!lowercase && !uppercase && !numchar && !specchar) {
+    alert("You must select at least one character type to include in the password!");
+    return;
+  } 
+
+  }
+
+
+  var password = "";
+  console.log(pasword)
+
 }
-if (!lower && !upper && !num && !char) {
-  alert("You must select at least one character type to include in the password!");
-  return;
-}
+
 
 // Generate password 
 var gpassword = generatePassword(length, lower, num, upper, char);
+console.log (gpassword)
 
 
 
-
-
-
-
-}
 
 
 // Add event listener to generate button
